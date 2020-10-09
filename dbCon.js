@@ -1,5 +1,5 @@
 const MongoClient = require("mongodb").MongoClient;
-const { db } = require("./api/models/bookModel.js");
+const { db } = require("./api/models/book.js");
 const config = require('./config.js');
 const dbConnectionUrl = config.databaseURL;
 

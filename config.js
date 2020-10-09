@@ -2,7 +2,8 @@ const config = {
     databaseURL: "mongodb+srv://hazelnut:Yy112358@mylibrary.dkpba.mongodb.net/BooksAPI?retryWrites=true&w=majority",
     options: {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useFindAndModify: false
     },
     port: process.env.PORT || 3000,
 }

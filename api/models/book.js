@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var BookSchema = new Schema({
-  book_id: {
+  bookId: {
     type: String,
     required: true
   },
@@ -14,7 +14,7 @@ var BookSchema = new Schema({
   cover: {
     type: String
   },
-  author: {
+  authors: {
     type: Schema.Types.ObjectId,
     ref: 'Author',
     required: true
@@ -33,7 +33,7 @@ var BookSchema = new Schema({
     type: String,
     required: true
   },
-  genre: [{
+  genres: [{
     type: Schema.Types.ObjectId,
     ref: 'Genre'
   }]
@@ -41,9 +41,9 @@ var BookSchema = new Schema({
 
 // Virtual for book's URL
 BookSchema
-.virtual('url')
-.get(function () {
-  return '/catalog/book/' + this._id;
-});
+  .virtual('url')
+  .get(function () {
+    return '/catalog/book/' + this._id;
+  });
 
-module.exports = mongoose.model('Books', BookSchema);
+module.exports = mongoose.model('Book', BookSchema);

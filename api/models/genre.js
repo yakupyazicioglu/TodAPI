@@ -3,10 +3,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var GenreSchema = new Schema({
-    genre_id: {
+    /* genreId: {
         type: String,
         required: true
-    },
+    }, */
     name: {
         type: String,
         required: true

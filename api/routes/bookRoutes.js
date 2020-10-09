@@ -6,11 +6,11 @@ module.exports = function (app) {
   // default route
   app.get('/', (req, res) => {
     res.json({
-      "message": "Welcome to ZeptoBook Product app"
+      "message": "Welcome to BooksAPI app"
     });
   });
 
-  // bookList Routes
+  // booksApi Routes
   app.route('/test')
     .get(bookList.test);
 
@@ -19,7 +19,19 @@ module.exports = function (app) {
     .post(bookList.create_a_book);
 
   app.route('/books/:bookId')
-    .get(bookList.read_a_book)
+    .get(bookList.find_a_book)
     .put(bookList.update_a_book)
     .delete(bookList.delete_a_book);
+
+  app.route('/title/:title')
+    .get(bookList.find_book_title);
+
+  app.route('/author/:author')
+    .get(bookList.find_book_author);
+
+  app.route('/isbn/:isbn')
+    .get(bookList.find_book_isbn);
+
+  app.route('/publishDate/:publishDate')
+    .get(bookList.find_book_publishdate);
 };

@@ -1,0 +1,329 @@
+[{
+    "name": "Edebiyat",
+    "value": 101
+},
+{
+    "name": "Roman",
+    "value": 102
+},
+{
+    "name": "Siir",
+    "value": 103
+},
+{
+    "name": "Oyku",
+    "value": 104
+},
+{
+    "name": "Biyografi & Otobiyografi",
+    "value": 105
+},
+{
+    "name": "Gunluk & Ani",
+    "value": 106
+},
+{
+    "name": "Mektup",
+    "value": 107
+},
+{
+    "name": "Destan",
+    "value": 108
+},
+{
+    "name": "Dunya Klasik",
+    "value": 109
+},
+{
+    "name": "Polisiye",
+    "value": 110
+},
+{
+    "name": "Fantastik",
+    "value": 111
+},
+{
+    "name": "Korku & Gerilim",
+    "nametr": "Gizem",
+    "value": 112
+},
+{
+    "name": "Bilim Kurgu",
+    "value": 113
+},
+{
+    "name": "Macera",
+    "value": 114
+},
+{
+    "name": "Cocuk & Genclik",
+    "value": 115
+},
+{
+    "name": "Egitim Basvuru",
+    "value": 116
+},
+{
+    "name": "Is Ekonomi & Hukuk ",
+    "value": 117
+},
+{
+    "name": "Egitim",
+    "value": 118
+},
+{
+    "name": "Kisisel Gelisim",
+    "value": 119
+},
+{
+    "name": "Aile Cocuk",
+    "value": 120
+},
+{
+    "name": "Gezi",
+    "value": 121
+},
+{
+    "name": "Dilbilimi/Etimoloji",
+    "value": 122
+},
+{
+    "name": "Saglik",
+    "value": 123
+},
+{
+    "name": "Bilgisayar",
+    "value": 124
+},
+{
+    "name": "Ansiklopedi",
+    "value": 125
+},
+{
+    "name": "Arastirma & Tarih",
+    "value": 126
+},
+{
+    "name": "Tarih",
+    "value": 127
+},
+{
+    "name": "Politika",
+    "value": 128
+},
+{
+    "name": "Sosyoloji",
+    "value": 129
+},
+{
+    "name": "Kadin",
+    "value": 130
+},
+{
+    "name": "Etnoloji",
+    "value": 131
+},
+{
+    "name": "Din Tasavvuf",
+    "value": 132
+},
+{
+    "name": "Islamiyet",
+    "value": 133
+},
+{
+    "name": "Tasavvuf",
+    "value": 134
+},
+{
+    "name": "Din",
+    "value": 135
+},
+{
+    "name": "Alevilik & Bektasilik",
+    "value": 136
+},
+{
+    "name": "Hristiyanlik",
+    "value": 137
+},
+{
+    "name": "Musevilik",
+    "value": 138
+},
+{
+    "name": "Budizm",
+    "value": 139
+},
+{
+    "name": "Sanat Tasarim",
+    "value": 140
+},
+{
+    "name": "Tiyatro",
+    "value": 141
+},
+{
+    "name": "Sinema",
+    "value": 142
+},
+{
+    "name": "Muzik",
+    "value": 143
+},
+{
+    "name": "Sanat Tarihi ve Kurami",
+    "value": 144
+},
+{
+    "name": "Mimari",
+    "value": 145
+},
+{
+    "name": "Fotograf & Grafik Sanati",
+    "value": 146
+},
+{
+    "name": "Sanatcilar",
+    "value": 147
+},
+{
+    "name": "Senaryo",
+    "value": 148
+},
+{
+    "name": "Felsefe",
+    "value": 149
+},
+{
+    "name": "Felsefe Bilimi",
+    "value": 150
+},
+{
+    "name": "Bilgelik",
+    "value": 151
+},
+{
+    "name": "Cizgi Roman",
+    "value": 152
+},
+{
+    "name": "Hobi",
+    "value": 153
+},
+{
+    "name": "Yemek Tatli",
+    "value": 154
+},
+{
+    "name": "Spor & Sporcular",
+    "value": 155
+},
+{
+    "name": "Parapsikoloji",
+    "value": 156
+},
+{
+    "name": "Astroloji & Fal & Buyu",
+    "value": 157
+},
+{
+    "name": "Bulmaca",
+    "value": 158
+},
+{
+    "name": "El Sanatlari",
+    "value": 159
+},
+{
+    "name": "Hayvan Bakimi",
+    "value": 160
+},
+{
+    "name": "Fotograf",
+    "value": 161
+},
+{
+    "name": "Moda",
+    "value": 162
+},
+{
+    "name": "Resim Teknigi",
+    "value": 163
+},
+{
+    "name": "Ruya Tabirleri",
+    "value": 164
+},
+{
+    "name": "Bilim",
+    "value": 165
+},
+{
+    "name": "Populer Bilim",
+    "value": 166
+},
+{
+    "name": "Bilim Tarihi ve Felsefesi",
+    "value": 167
+},
+{
+    "name": "Muhendislik",
+    "value": 168
+},
+{
+    "name": "Matematik",
+    "value": 169
+},
+{
+    "name": "Ekoloji/Cevre Bilim",
+    "value": 170
+},
+{
+    "name": "Arkeoloji",
+    "value": 171
+},
+{
+    "name": "Tubitak",
+    "value": 172
+},
+{
+    "name": "Antropoloji",
+    "value": 173
+},
+{
+    "name": "Fizik",
+    "value": 174
+},
+{
+    "name": "Biyoloji",
+    "value": 175
+},
+{
+    "name": "Cografya",
+    "value": 176
+},
+{
+    "name": "Jeoloji",
+    "value": 177
+},
+{
+    "name": "Botanik",
+    "value": 178
+},
+{
+    "name": "Kimya",
+    "value": 179
+},
+{
+    "name": "Astronomi",
+    "value": 180
+},
+{
+    "name": "Zooloji",
+    "value": 181
+},
+{
+    "name": "Anatomi",
+    "value": 182
+}]

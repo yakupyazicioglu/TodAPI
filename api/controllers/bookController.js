@@ -1,10 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
-const {
-  MongoClient
-} = require("mongodb");
-var Book = mongoose.model('Books');
+var Book = mongoose.model('Book');
 
 exports.test = function (req, res) {
   res.send('Greetings from the Test controller!');
@@ -14,7 +11,7 @@ exports.list_all_books = function (req, res) {
   Book.find({}, function (err, book) {
     if (err)
       res.send(err);
-    res.send(book);
+    res.json(book);
   });
 };
 
@@ -28,17 +25,57 @@ exports.create_a_book = function (req, res) {
   });
 };
 
-exports.read_a_book = function (req, res) {
-  Book.findById(req.params.bookId, function (err, book) {
+exports.find_a_book = function (req, res) {
+  console.log(req.params);
+  Book.findOne({"id": req.params.bookId }, function (err, book) {
     if (err)
       res.send(err);
     res.json(book);
   });
 };
 
+exports.find_book_isbn = function (req, res) {
+  console.log(req.params);
+  Book.findOne({"isbn": req.params.isbn }, function (err, book) {
+    if (err)
+      res.send(err);
+    res.json(book);
+  });
+};
+
+exports.find_book_title = function (req, res) {
+  console.log(req.params);
+  Book.find({"title": req.params.title }, function (err, book) {
+    if (err)
+      res.send(err);
+    res.json(book);
+  });
+};
+
+
+exports.find_book_author = function (req, res) {
+  console.log(req.params);
+  Book.find({"authors.0.name": req.params.author }, function (err, book) {
+    if (err)
+      res.send(err);
+    res.json(book);
+  });
+};
+
+//Working
+exports.find_book_publishdate = function (req, res) {
+  console.log(req.params);
+  Book.find({"publishDate": req.params.publishDate }, function (err, book) {
+    if (err)
+      res.send(err);
+    res.json(book);
+  });
+};
+
+//Working
 exports.update_a_book = function (req, res) {
   Book.findOneAndUpdate({
-    _id: req.params.bookId
+    id: req.params.bookId
   }, req.body, {
     new: true
   }, function (err, book) {
@@ -48,9 +85,11 @@ exports.update_a_book = function (req, res) {
   });
 };
 
+
+//Working
 exports.delete_a_book = function (req, res) {
-  Book.remove({
-    _id: req.params.bookId
+  Book.findOneAndRemove({
+    id: req.params.bookId
   }, function (err, book) {
     if (err)
       res.send(err);

@@ -1,5 +1,3 @@
-'use strict';
-
 var mongoose = require('mongoose');
 var Book = mongoose.model('Book');
 
@@ -85,10 +83,22 @@ exports.update_a_book = function (req, res) {
   });
 };
 
-
 //Working
 exports.delete_a_book = function (req, res) {
   Book.findOneAndRemove({
+    id: req.params.bookId
+  }, function (err, book) {
+    if (err)
+      res.send(err);
+    res.json({
+      message: 'Book successfully deleted'
+    });
+  });
+};
+
+//TODO A service for counts all the books
+exports.books_count = function (req, res) {
+  Book.find({
     id: req.params.bookId
   }, function (err, book) {
     if (err)

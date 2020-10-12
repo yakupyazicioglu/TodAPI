@@ -1,15 +1,15 @@
-'use strict';
-
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+
 var GenreSchema = new Schema({
-    /* genreId: {
+    genreId: {
         type: String,
         required: true
-    }, */
+    },
     name: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     }
 });
 
@@ -17,7 +17,7 @@ var GenreSchema = new Schema({
 GenreSchema
     .virtual('url')
     .get(function () {
-        return '/catalog/genre' + this._id;
+        return '/genre' + this._id;
     });
 
-module.exports = mongoose.model('Genre', BookSchema);
+module.exports = mongoose.model('Genre', GenreSchema);

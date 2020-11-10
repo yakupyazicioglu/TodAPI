@@ -1,3 +1,4 @@
+'use strict';
 module.exports = function (app) {
   var bookList = require('../controllers/bookController');
 
@@ -9,8 +10,7 @@ module.exports = function (app) {
   });
 
   // booksApi Routes
-  app.route('/test')
-    .get(bookList.test);
+  app.get('/test', bookList.test);
 
   app.route('/books')
     .get(bookList.list_all_books)
@@ -24,8 +24,8 @@ module.exports = function (app) {
   app.route('/title/:title')
     .get(bookList.find_book_title);
 
-  app.route('/author/:author')
-    .get(bookList.find_book_author);
+  app.route('/books/:author')
+    .post(bookList.find_book_author);
 
   app.route('/isbn/:isbn')
     .get(bookList.find_book_isbn);

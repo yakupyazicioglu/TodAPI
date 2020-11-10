@@ -1,329 +1,576 @@
 [{
-    "name": "Edebiyat",
-    "value": 101
+    "gId": "g101",
+    "gName": "Edebiyat",
+    "gValue": 101
 },
 {
-    "name": "Roman",
-    "value": 102
+    "gId": "g102",
+    "gName": "Roman",
+    "gValue": 102
 },
 {
-    "name": "Siir",
-    "value": 103
+    "gId": "g103",
+    "gName": "Şiir",
+    "gValue": 103
 },
 {
-    "name": "Oyku",
-    "value": 104
+    "gId": "g104",
+    "gName": "Öykü",
+    "gValue": 104
 },
 {
-    "name": "Biyografi & Otobiyografi",
-    "value": 105
+    "gId": "g105",
+    "gName": "Biyografi & Otobiyografi",
+    "gValue": 105
 },
 {
-    "name": "Gunluk & Ani",
-    "value": 106
+    "gId": "g106",
+    "gName": "Günlük & Anı",
+    "gValue": 106
 },
 {
-    "name": "Mektup",
-    "value": 107
+    "gId": "g107",
+    "gName": "Mektup",
+    "gValue": 107
 },
 {
-    "name": "Destan",
-    "value": 108
+    "gId": "g108",
+    "gName": "Destan",
+    "gValue": 108
 },
 {
-    "name": "Dunya Klasik",
-    "value": 109
+    "gId": "g109",
+    "gName": "Dünya Klasik",
+    "gValue": 109
 },
 {
-    "name": "Polisiye",
-    "value": 110
+    "gId": "g110",
+    "gName": "Polisiye",
+    "gValue": 110
 },
 {
-    "name": "Fantastik",
-    "value": 111
+    "gId": "g111",
+    "gName": "Fantastik",
+    "gValue": 111
 },
 {
-    "name": "Korku & Gerilim",
-    "nametr": "Gizem",
-    "value": 112
+    "gId": "g112",
+    "gName": "Korku & Gerilim",
+    "gValue": 112
 },
 {
-    "name": "Bilim Kurgu",
-    "value": 113
+    "gId": "g113",
+    "gName": "Bilim Kurgu",
+    "gValue": 113
 },
 {
-    "name": "Macera",
-    "value": 114
+    "gId": "g114",
+    "gName": "Macera",
+    "gValue": 114
 },
 {
-    "name": "Cocuk & Genclik",
-    "value": 115
+    "gId": "g115",
+    "gName": "Çocuk & Gençlik",
+    "gValue": 115
 },
 {
-    "name": "Egitim Basvuru",
-    "value": 116
+    "gId": "g116",
+    "gName": "Eğitim & Başvuru",
+    "gValue": 116
 },
 {
-    "name": "Is Ekonomi & Hukuk ",
-    "value": 117
+    "gId": "g117",
+    "gName": "İş & Ekonomi & Hukuk",
+    "gValue": 117
 },
 {
-    "name": "Egitim",
-    "value": 118
+    "gId": "g118",
+    "gName": "Eğitim",
+    "gValue": 118
 },
 {
-    "name": "Kisisel Gelisim",
-    "value": 119
+    "gId": "g119",
+    "gName": "Kişisel Gelişim",
+    "gValue": 119
 },
 {
-    "name": "Aile Cocuk",
-    "value": 120
+    "gId": "g120",
+    "gName": "Aile & Çocuk",
+    "gValue": 120
 },
 {
-    "name": "Gezi",
-    "value": 121
+    "gId": "g121",
+    "gName": "Gezi",
+    "gValue": 121
 },
 {
-    "name": "Dilbilimi/Etimoloji",
-    "value": 122
+    "gId": "g122",
+    "gName": "Dilbilimi/Etimoloji",
+    "gValue": 122
 },
 {
-    "name": "Saglik",
-    "value": 123
+    "gId": "g123",
+    "gName": "Sağlık",
+    "gValue": 123
 },
 {
-    "name": "Bilgisayar",
-    "value": 124
+    "gId": "g124",
+    "gName": "Bilgisayar",
+    "gValue": 124
 },
 {
-    "name": "Ansiklopedi",
-    "value": 125
+    "gId": "g125",
+    "gName": "Ansiklopedi",
+    "gValue": 125
 },
 {
-    "name": "Arastirma & Tarih",
-    "value": 126
+    "gId": "g126",
+    "gName": "Araştırma & Tarih",
+    "gValue": 126
 },
 {
-    "name": "Tarih",
-    "value": 127
+    "gId": "g127",
+    "gName": "Tarih",
+    "gValue": 127
 },
 {
-    "name": "Politika",
-    "value": 128
+    "gId": "g128",
+    "gName": "Politika",
+    "gValue": 128
 },
 {
-    "name": "Sosyoloji",
-    "value": 129
+    "gId": "g129",
+    "gName": "Sosyoloji",
+    "gValue": 129
 },
 {
-    "name": "Kadin",
-    "value": 130
+    "gId": "g130",
+    "gName": "Kadın",
+    "gValue": 130
 },
 {
-    "name": "Etnoloji",
-    "value": 131
+    "gId": "g131",
+    "gName": "Etnoloji",
+    "gValue": 131
 },
 {
-    "name": "Din Tasavvuf",
-    "value": 132
+    "gId": "g132",
+    "gName": "Din & Tasavvuf",
+    "gValue": 132
 },
 {
-    "name": "Islamiyet",
-    "value": 133
+    "gId": "g133",
+    "gName": "Islamiyet",
+    "gValue": 133
 },
 {
-    "name": "Tasavvuf",
-    "value": 134
+    "gId": "g134",
+    "gName": "Tasavvuf",
+    "gValue": 134
 },
 {
-    "name": "Din",
-    "value": 135
+    "gId": "g135",
+    "gName": "Din",
+    "gValue": 135
 },
 {
-    "name": "Alevilik & Bektasilik",
-    "value": 136
+    "gId": "g136",
+    "gName": "Alevilik & Bektaşilik",
+    "gValue": 136
 },
 {
-    "name": "Hristiyanlik",
-    "value": 137
+    "gId": "g137",
+    "gName": "Hristiyanlik",
+    "gValue": 137
 },
 {
-    "name": "Musevilik",
-    "value": 138
+    "gId": "g138",
+    "gName": "Musevilik",
+    "gValue": 138
 },
 {
-    "name": "Budizm",
-    "value": 139
+    "gId": "g139",
+    "gName": "Budizm",
+    "gValue": 139
 },
 {
-    "name": "Sanat Tasarim",
-    "value": 140
+    "gId": "g140",
+    "gName": "Sanat & Tasarım",
+    "gValue": 140
 },
 {
-    "name": "Tiyatro",
-    "value": 141
+    "gId": "g141",
+    "gName": "Tiyatro",
+    "gValue": 141
 },
 {
-    "name": "Sinema",
-    "value": 142
+    "gId": "g142",
+    "gName": "Sinema",
+    "gValue": 142
 },
 {
-    "name": "Muzik",
-    "value": 143
+    "gId": "g143",
+    "gName": "Müzik",
+    "gValue": 143
 },
 {
-    "name": "Sanat Tarihi ve Kurami",
-    "value": 144
+    "gId": "g144",
+    "gName": "Sanat Tarihi ve Kuramı",
+    "gValue": 144
 },
 {
-    "name": "Mimari",
-    "value": 145
+    "gId": "g145",
+    "gName": "Mimari",
+    "gValue": 145
 },
 {
-    "name": "Fotograf & Grafik Sanati",
-    "value": 146
+    "gId": "g146",
+    "gName": "Fotoğraf & Grafik",
+    "gValue": 146
 },
 {
-    "name": "Sanatcilar",
-    "value": 147
+    "gId": "g147",
+    "gName": "Sanatçılar",
+    "gValue": 147
 },
 {
-    "name": "Senaryo",
-    "value": 148
+    "gId": "g148",
+    "gName": "Senaryo",
+    "gValue": 148
 },
 {
-    "name": "Felsefe",
-    "value": 149
+    "gId": "g149",
+    "gName": "Felsefe",
+    "gValue": 149
 },
 {
-    "name": "Felsefe Bilimi",
-    "value": 150
+    "gId": "g150",
+    "gName": "Felsefe Bilimi",
+    "gValue": 150
 },
 {
-    "name": "Bilgelik",
-    "value": 151
+    "gId": "g151",
+    "gName": "Bilgelik",
+    "gValue": 151
 },
 {
-    "name": "Cizgi Roman",
-    "value": 152
+    "gId": "g152",
+    "gName": "Çizgi Roman",
+    "gValue": 152
 },
 {
-    "name": "Hobi",
-    "value": 153
+    "gId": "g153",
+    "gName": "Hobi",
+    "gValue": 153
 },
 {
-    "name": "Yemek Tatli",
-    "value": 154
+    "gId": "g154",
+    "gName": "Yemek & Tatlı",
+    "gValue": 154
 },
 {
-    "name": "Spor & Sporcular",
-    "value": 155
+    "gId": "g155",
+    "gName": "Spor & Sporcular",
+    "gValue": 155
 },
 {
-    "name": "Parapsikoloji",
-    "value": 156
+    "gId": "g156",
+    "gName": "Parapsikoloji",
+    "gValue": 156
 },
 {
-    "name": "Astroloji & Fal & Buyu",
-    "value": 157
+    "gId": "g157",
+    "gName": "Astroloji & Fal & Büyü",
+    "gValue": 157
 },
 {
-    "name": "Bulmaca",
-    "value": 158
+    "gId": "g158",
+    "gName": "Bulmaca",
+    "gValue": 158
 },
 {
-    "name": "El Sanatlari",
-    "value": 159
+    "gId": "g159",
+    "gName": "El Sanatları",
+    "gValue": 159
 },
 {
-    "name": "Hayvan Bakimi",
-    "value": 160
+    "gId": "g160",
+    "gName": "Hayvan Bakımı",
+    "gValue": 160
 },
 {
-    "name": "Fotograf",
-    "value": 161
+    "gId": "g161",
+    "gName": "Fotoğraf",
+    "gValue": 161
 },
 {
-    "name": "Moda",
-    "value": 162
+    "gId": "g162",
+    "gName": "Moda",
+    "gValue": 162
 },
 {
-    "name": "Resim Teknigi",
-    "value": 163
+    "gId": "g163",
+    "gName": "Resim Tekniği",
+    "gValue": 163
 },
 {
-    "name": "Ruya Tabirleri",
-    "value": 164
+    "gId": "g164",
+    "gName": "Rüya Tabirleri",
+    "gValue": 164
 },
 {
-    "name": "Bilim",
-    "value": 165
+    "gId": "g165",
+    "gName": "Bilim",
+    "gValue": 165
 },
 {
-    "name": "Populer Bilim",
-    "value": 166
+    "gId": "g166",
+    "gName": "Populer Bilim",
+    "gValue": 166
 },
 {
-    "name": "Bilim Tarihi ve Felsefesi",
-    "value": 167
+    "gId": "g167",
+    "gName": "Bilim Tarihi ve Felsefesi",
+    "gValue": 167
 },
 {
-    "name": "Muhendislik",
-    "value": 168
+    "gId": "g168",
+    "gName": "Mühendislik",
+    "gValue": 168
 },
 {
-    "name": "Matematik",
-    "value": 169
+    "gId": "g169",
+    "gName": "Matematik",
+    "gValue": 169
 },
 {
-    "name": "Ekoloji/Cevre Bilim",
-    "value": 170
+    "gId": "g170",
+    "gName": "Ekoloji",
+    "gValue": 170
 },
 {
-    "name": "Arkeoloji",
-    "value": 171
+    "gId": "g171",
+    "gName": "Arkeoloji",
+    "gValue": 171
 },
 {
-    "name": "Tubitak",
-    "value": 172
+    "gId": "g172",
+    "gName": "Tübitak",
+    "gValue": 172
 },
 {
-    "name": "Antropoloji",
-    "value": 173
+    "gId": "g173",
+    "gName": "Antropoloji",
+    "gValue": 173
 },
 {
-    "name": "Fizik",
-    "value": 174
+    "gId": "g174",
+    "gName": "Fizik",
+    "gValue": 174
 },
 {
-    "name": "Biyoloji",
-    "value": 175
+    "gId": "g175",
+    "gName": "Biyoloji",
+    "gValue": 175
 },
 {
-    "name": "Cografya",
-    "value": 176
+    "gId": "g176",
+    "gName": "Coğrafya",
+    "gValue": 176
 },
 {
-    "name": "Jeoloji",
-    "value": 177
+    "gId": "g177",
+    "gName": "Jeoloji",
+    "gValue": 177
 },
 {
-    "name": "Botanik",
-    "value": 178
+    "gId": "g178",
+    "gName": "Botanik",
+    "gValue": 178
 },
 {
-    "name": "Kimya",
-    "value": 179
+    "gId": "g179",
+    "gName": "Kimya",
+    "gValue": 179
 },
 {
-    "name": "Astronomi",
-    "value": 180
+    "gId": "g180",
+    "gName": "Astronomi",
+    "gValue": 180
 },
 {
-    "name": "Zooloji",
-    "value": 181
+    "gId": "g181",
+    "gName": "Zooloji",
+    "gValue": 181
 },
 {
-    "name": "Anatomi",
-    "value": 182
-}]
+    "gId": "g182",
+    "gName": "Anatomi",
+    "gValue": 182
+},
+{
+    "gId": "g183",
+    "gName": "Türkiye Roman",
+    "gValue": 183
+},
+{
+    "gId": "g184",
+    "gName": "Dünya Roman",
+    "gValue": 184
+},
+{
+    "gId": "g185",
+    "gName": "Dünya Klasik",
+    "gValue": 185
+},
+{
+    "gId": "g186",
+    "gName": "Romantik",
+    "gValue": 186
+},
+{
+    "gId": "g187",
+    "gName": "Türk Klasik",
+    "gValue": 187
+},
+{
+    "gId": "g188",
+    "gName": "Korku-Gerilim",
+    "gValue": 188
+},
+{
+    "gId": "g189",
+    "gName": "----------------------------------Bos",
+    "gValue": 189
+},
+{
+    "gId": "g190",
+    "gName": "Türk Şiir",
+    "gValue": 190
+},
+{
+    "gId": "g191",
+    "gName": "Dünya Şiir",
+    "gValue": 191
+},
+{
+    "gId": "g192",
+    "gName": "Deneme & Yazın",
+    "gValue": 192
+},
+{
+    "gId": "g193",
+    "gName": "Türk Öykü",
+    "gValue": 193
+},
+{
+    "gId": "g194",
+    "gName": "Edebiyat & Inceleme",
+    "gValue": 194
+},
+{
+    "gId": "g195",
+    "gName": "Türk-Günlük-Anı",
+    "gValue": 195
+},
+{
+    "gId": "g196",
+    "gName": "Anlatı",
+    "gValue": 196
+},
+{
+    "gId": "g197",
+    "gName": "Dünya Öykü",
+    "gValue": 197
+},
+{
+    "gId": "g198",
+    "gName": "Dünya-Günlük-Anı",
+    "gValue": 198
+},
+{
+    "gId": "g199",
+    "gName": "Söyleşi",
+    "gValue": 199
+},
+{
+    "gId": "g200",
+    "gName": "Türk Mektup",
+    "gValue": 200
+},
+{
+    "gId": "g201",
+    "gName": "Edebiyatçılar",
+    "gValue": 201
+},
+{
+    "gId": "g202",
+    "gName": "Dünya Mektup",
+    "gValue": 202
+},
+{
+    "gId": "g203",
+    "gName": "Röportaj",
+    "gValue": 203
+},
+{
+    "gId": "g204",
+    "gName": "Çocuk-6-10",
+    "gValue": 204
+},
+{
+    "gId": "g205",
+    "gName": "Okul-Öncesi",
+    "gValue": 205
+},
+{
+    "gId": "g206",
+    "gName": "Gençlik",
+    "gValue": 206
+},
+{
+    "gId": "g207",
+    "gName": "Islami-Çocuk",
+    "gValue": 207
+},
+{
+    "gId": "g208",
+    "gName": "Psikoloji",
+    "gValue": 208
+},
+{
+    "gId": "g209",
+    "gName": "Istanbul",
+    "gValue": 209
+},
+{
+    "gId": "g210",
+    "gName": "Kişiler",
+    "gValue": 210
+},
+{
+    "gId": "g211",
+    "gName": "Ermeniler",
+    "gValue": 211
+},
+{
+    "gId": "g212",
+    "gName": "Resim Sanatları",
+    "gValue": 212
+},
+{
+    "gId": "g213",
+    "gName": "Felsefeciler",
+    "gValue": 213
+},
+{
+    "gId": "g214",
+    "gName": "Felsefi Romanlar",
+    "gValue": 214
+},
+{
+    "gId": "g215",
+    "gName": "Mitoloji & Efsane",
+    "gValue": 215
+}
+]

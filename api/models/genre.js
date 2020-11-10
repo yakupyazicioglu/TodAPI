@@ -2,14 +2,18 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var GenreSchema = new Schema({
-    genreId: {
+    gId: {
         type: String,
         required: true
     },
-    name: {
+    gName: {
         type: String,
         required: true,
         trim: true
+    },
+    gValue: {
+        type: Number,
+        required: true
     }
 });
 

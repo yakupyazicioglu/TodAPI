@@ -4,10 +4,28 @@ var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
     name: {
-      first: String,
-      last: { type: String, trim: true }
+      type: String,
+      required: true,
+      trim: true,
     },
-    age: { type: Number, min: 0 }
+    username: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    password: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    age: {
+      type: Number
+    },
   });
 
 //Export model

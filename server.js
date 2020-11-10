@@ -6,7 +6,8 @@ const Book = require("./api/models/book");
 const Author = require("./api/models/author");
 const Genre = require("./api/models/genre");
 const bodyParser = require('body-parser');
-var routes = require("./api/routes/bookRoutes");
+var routes = require("./api/routes/apiRoutes.js");
+
 const app = express();
 
 mongoose.Promise = global.Promise;

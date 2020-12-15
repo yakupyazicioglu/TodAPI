@@ -6,7 +6,11 @@ const Book = require("./api/models/book");
 const Author = require("./api/models/author");
 const Genre = require("./api/models/genre");
 const bodyParser = require('body-parser');
+const AdminBro = require('admin-bro')
+const AdminBroExpressjs = require('admin-bro-expressjs')
 var routes = require("./api/routes/apiRoutes.js");
+
+AdminBro.registerAdapter(require('admin-bro-mongoose'))
 
 const app = express();
 
@@ -22,6 +26,15 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 app.use(cors());
+
+const adminBro = new AdminBro({
+    resources: [Book,Author,Genre],
+    rootPath: '/collections',
+  });
+
+// Build and use a router which will handle all AdminBro routes
+const router = AdminBroExpressjs.buildRouter(adminBro)
+app.use(adminBro.options.rootPath, router)
 
 //ROUTES TO USE
 routes(app);

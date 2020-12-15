@@ -1,5 +1,5 @@
 const config = {
-    databaseURL: "mongodb+srv://hazelnut:Yy112358@mylibrary.dkpba.mongodb.net/BooksAPI?retryWrites=true&w=majority",
+    databaseURL: "mongodb+srv://hazelnut:Yy112358@toddatas.bhbik.mongodb.net/todapp?retryWrites=true&w=majority",
     options: {
         useNewUrlParser: true,
         useUnifiedTopology: true,

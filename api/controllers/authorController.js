@@ -7,7 +7,7 @@ exports.list_all_authors = function (req, res) {
     if (err)
       res.send(err);
     res.json(author);
-  });
+  }).limit(20);;
 };
 
 //Find a author by Id

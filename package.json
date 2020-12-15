@@ -1,5 +1,5 @@
 {
-  "name": "booksapi",
+  "name": "todapi",
   "version": "1.0.0",
   "description": "This api provides millions of books",
   "main": "index.js",

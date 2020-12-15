@@ -5,7 +5,7 @@ const config = {
         useUnifiedTopology: true,
         useFindAndModify: false
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3003,
 }
 
 module.exports = config;

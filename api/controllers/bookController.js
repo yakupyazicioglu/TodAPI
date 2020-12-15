@@ -11,7 +11,7 @@ exports.list_all_books = function (req, res) {
     if (err)
       res.send(err);
     res.json(book);
-  });
+  }).limit(20);
 };
 
 //Useles for now
@@ -32,7 +32,7 @@ exports.find_a_book = function (req, res) {
     if (err)
       res.send(err);
     res.json(book);
-  });
+  }).limit(20);
 };
 
 //Find a book by isbn
@@ -52,7 +52,7 @@ exports.find_book_title = function (req, res) {
     if (err)
       res.send(err);
     res.json(book);
-  });
+  }).limit(20);
 };
 
 //Find an author by name
@@ -62,7 +62,7 @@ exports.find_book_author = function (req, res) {
     if (err)
       res.send(err);
     res.json(book);
-  });
+  }).limit(20);
 };
 
 //Working

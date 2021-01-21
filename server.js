@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const config = require('./config.js');
+const config = require('./api/config/config.js');
 const mongoose = require("mongoose")
 const Book = require("./api/models/book");
 const Author = require("./api/models/author");

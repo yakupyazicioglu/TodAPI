@@ -7,16 +7,15 @@ module.exports = function (app) {
     // default route
     app.get('/', (req, res) => {
         res.json({
-            "message": "Welcome to BooksAPI app"
+            "message": "Welcome to TodAPI"
         });
     });
 
     // books Routes
     app.get('/test', bookList.test);
 
-    app.route('/books')
+    app.route('/books/:page')
         .get(bookList.list_all_books);
-    //.post(bookList.create_a_book);
 
     app.route('/book/:bookId')
         .get(bookList.find_a_book)

@@ -1,23 +1,29 @@
 var mongoose = require('mongoose');
 var Book = mongoose.model('Book');
 
+const getPagination = (page, size) => {
+  const limit = size ? +size : 3;
+  const offset = page ? page * limit : 5;
+
+  return { limit, offset };
+};
+
 exports.test = function (req, res) {
   res.send('Greetings from the Test controller!');
 };
 
 //Get all the books
 exports.list_all_books = function (req, res) {
-  Book.find({}, function (err, book) {
+  Book.paginate({}, { page: req.params.page , limit:  6}, function (err, book) {
     if (err)
       res.send(err);
-    res.json(book);
-  }).limit(20);
+    res.json(book.docs);
+  });
 };
 
 //Useles for now
 exports.create_a_book = function (req, res) {
   var new_book = new Book(req.body);
-  console.log(req.body);
   new_book.save(function (err, book) {
     if (err)
       res.send(err);

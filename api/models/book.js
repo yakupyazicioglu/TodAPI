@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate-v2');
 var Schema = mongoose.Schema;
 
 var BookSchema = new Schema({
@@ -42,6 +43,8 @@ var BookSchema = new Schema({
     ref: 'Genre'
   }
 });
+
+BookSchema.plugin(mongoosePaginate);
 
 // Virtual for book's URL
 BookSchema

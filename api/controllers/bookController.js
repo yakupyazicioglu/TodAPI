@@ -14,7 +14,7 @@ exports.test = function (req, res) {
 
 //Get all the books
 exports.list_all_books = function (req, res) {
-  Book.paginate({}, { page: req.params.page , limit:  6}, function (err, book) {
+  Book.paginate({}, { page: req.params.page , limit:  15}, function (err, book) {
     if (err)
       res.send(err);
     res.json(book.docs);

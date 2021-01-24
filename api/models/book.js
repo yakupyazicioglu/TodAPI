@@ -3,7 +3,7 @@ const mongoosePaginate = require('mongoose-paginate-v2');
 var Schema = mongoose.Schema;
 
 var BookSchema = new Schema({
-  bookId: {
+  bId: {
     type: String,
     required: true
   },
@@ -44,7 +44,14 @@ var BookSchema = new Schema({
   }
 });
 
+BookSchema.index({title: 'text'});
+//BookSchema.index({'$**': 'text'});
+
 BookSchema.plugin(mongoosePaginate);
+
+/* BookSchema.query.byTitle = function(title){
+  return this.where({title: new RegExp(title, 'i')})
+} */
 
 // Virtual for book's URL
 BookSchema

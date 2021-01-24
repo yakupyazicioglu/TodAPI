@@ -17,6 +17,8 @@ var GenreSchema = new Schema({
     }
 });
 
+GenreSchema.index({gName: 'text'});
+
 // Virtual for genre's URL
 GenreSchema
     .virtual('url')

@@ -20,6 +20,16 @@ exports.find_an_author = function (req, res) {
   });
 };
 
+//Search an author
+exports.search_author = function (req, res) {
+  console.log(req.params);
+  Author.find({$text: {$search: req.params.key}}, function (err, author) {
+    if (err)
+      res.send(err);
+    res.json(author);
+  }).limit(20);
+};
+
 //Find an author by name
 exports.find_author_name = function (req, res) {
   console.log(req.params);

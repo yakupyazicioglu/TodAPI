@@ -1,13 +1,6 @@
 var mongoose = require('mongoose');
 var Book = mongoose.model('Book');
 
-const getPagination = (page, size) => {
-  const limit = size ? +size : 3;
-  const offset = page ? page * limit : 5;
-
-  return { limit, offset };
-};
-
 exports.test = function (req, res) {
   res.send('Greetings from the Test controller!');
 };
@@ -55,6 +48,16 @@ exports.find_book_isbn = function (req, res) {
 exports.find_book_title = function (req, res) {
   console.log(req.params);
   Book.find({"title": req.params.title }, function (err, book) {
+    if (err)
+      res.send(err);
+    res.json(book);
+  }).limit(20);
+};
+
+//Search a book
+exports.search_book = function (req, res) {
+  console.log(req.params);
+  Book.find({$text: {$search: req.params.key}}, function (err, book) {
     if (err)
       res.send(err);
     res.json(book);

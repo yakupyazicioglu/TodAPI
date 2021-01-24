@@ -22,6 +22,16 @@ exports.find_a_genre = function (req, res) {
     });
 };
 
+//Search a genre
+exports.search_genre = function (req, res) {
+    console.log(req.params);
+    Genre.find({$text: {$search: req.params.key}}, function (err, genre) {
+      if (err)
+        res.send(err);
+      res.json(genre);
+    });
+  };
+
 //Find an genre by name
 exports.find_genre_name = function (req, res) {
     console.log(req.params);

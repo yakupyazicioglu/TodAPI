@@ -2,30 +2,27 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var AuthorSchema = new Schema({
-  authorId: {
+  aId: {
     type: String,
     required: true
   },
-  name: {
+  aName: {
     type: String,
     required: true,
     trim: true,
     maxlength: 100
   },
-  date_of_birth: {
-    type: Date
+  cover: {
+    type: String
   },
-  date_of_death: {
-    type: Date
+  summary: {
+    type: String,
+    required: true,
+    trim: true
   },
 });
 
-// Virtual for author's lifespan
-AuthorSchema
-  .virtual('lifespan')
-  .get(function () {
-    return (this.date_of_death.getYear() - this.date_of_birth.getYear()).toString();
-  });
+AuthorSchema.index({aName: 'text'});
 
 // Virtual for author's URL
 AuthorSchema

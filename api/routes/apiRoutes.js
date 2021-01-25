@@ -3,6 +3,7 @@ module.exports = function (app) {
     var bookList = require('../controllers/bookController');
     var authorList = require('../controllers/authorController');
     var genreList = require('../controllers/genreController');
+    var userList = require('../controllers/userController');
 
     // default route
     app.get('/', (req, res) => {
@@ -57,7 +58,7 @@ module.exports = function (app) {
         .get(authorList.search_author);
 
 
-    // genre Routes
+    // Genre Routes
     app.route('/api/genres')
         .get(genreList.list_all_genres);
 
@@ -71,4 +72,21 @@ module.exports = function (app) {
 
     app.route('/api/search/genre/:key')
         .get(genreList.search_genre);
+
+    // User Routes
+    app.route('/api/users')
+        .get(userList.list_all_users);
+
+    app.route('/api/get-user')
+        .get(userList.get_user);
+
+    app.route('/api/user')
+        .delete(userList.delete_user);
+
+    app.route('/api/user/login')
+        .post(userList.login);
+
+    app.route('/api/user/register')
+        .post(userList.register);
+
 };

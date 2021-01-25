@@ -5,6 +5,7 @@ const mongoose = require("mongoose")
 const Book = require("./api/models/book");
 const Author = require("./api/models/author");
 const Genre = require("./api/models/genre");
+const User = require("./api/models/user");
 const bodyParser = require('body-parser');
 const AdminBro = require('admin-bro')
 const AdminBroExpressjs = require('admin-bro-expressjs')
@@ -28,7 +29,7 @@ app.use(bodyParser.json())
 app.use(cors());
 
 const adminBro = new AdminBro({
-    resources: [Book,Author,Genre],
+    resources: [Book,Author,Genre,User],
     rootPath: '/collections',
   });
 

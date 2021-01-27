@@ -6,11 +6,9 @@ function generateToken(use) {
   //1. Don't use password and other sensitive fields
   //2. Use the information that are useful in other parts
   if (!use) return null;
-  var user = use[0];
   var u = {
-    userId: user.id,
-    userName: user.userName,
-    isAdmin: "true",
+    userId: use.id,
+    userName: use.username,
   };
 
   return jwt.sign(u, process.env.JWT_SECRET, {
@@ -21,11 +19,9 @@ function generateToken(use) {
 // return basic user details
 function getCleanUser(use) {
   if (!use) return null;
-  var user = use[0];
   return {
-    userId: user.id,
-    userName: user.userName,
-    isAdmin: "true",
+    userId: use.id,
+    userName: use.username,
   };
 }
 

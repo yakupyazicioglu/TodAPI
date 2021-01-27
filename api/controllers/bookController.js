@@ -1,15 +1,14 @@
-var mongoose = require('mongoose');
-var Book = mongoose.model('Book');
+var mongoose = require("mongoose");
+var Book = mongoose.model("Book");
 
 exports.test = function (req, res) {
-  res.send('Greetings from the Test controller!');
+  res.send("Greetings from the Test controller!");
 };
 
 //Get all the books
 exports.list_all_books = function (req, res) {
-  Book.paginate({}, { page: req.params.page , limit:  15}, function (err, book) {
-    if (err)
-      res.send(err);
+  Book.paginate({}, { page: req.params.page, limit: 20 }, function (err, book) {
+    if (err) res.send(err);
     res.json(book.docs);
   });
 };
@@ -18,8 +17,7 @@ exports.list_all_books = function (req, res) {
 exports.create_a_book = function (req, res) {
   var new_book = new Book(req.body);
   new_book.save(function (err, book) {
-    if (err)
-      res.send(err);
+    if (err) res.send(err);
     res.json(book);
   });
 };
@@ -27,9 +25,8 @@ exports.create_a_book = function (req, res) {
 //Find a book by Id
 exports.find_a_book = function (req, res) {
   console.log(req.params);
-  Book.findOne({"bId": req.params.bookId }, function (err, book) {
-    if (err)
-      res.send(err);
+  Book.findOne({ bId: req.params.bookId }, function (err, book) {
+    if (err) res.send(err);
     res.json(book);
   }).limit(20);
 };
@@ -37,9 +34,8 @@ exports.find_a_book = function (req, res) {
 //Find a book by isbn
 exports.find_book_isbn = function (req, res) {
   console.log(req.params);
-  Book.findOne({"isbn": req.params.isbn }, function (err, book) {
-    if (err)
-      res.send(err);
+  Book.findOne({ isbn: req.params.isbn }, function (err, book) {
+    if (err) res.send(err);
     res.json(book);
   });
 };
@@ -47,9 +43,8 @@ exports.find_book_isbn = function (req, res) {
 //Find a book by title
 exports.find_book_title = function (req, res) {
   console.log(req.params);
-  Book.find({"title": req.params.title }, function (err, book) {
-    if (err)
-      res.send(err);
+  Book.find({ title: req.params.title }, function (err, book) {
+    if (err) res.send(err);
     res.json(book);
   }).limit(20);
 };
@@ -57,9 +52,12 @@ exports.find_book_title = function (req, res) {
 //Search a book
 exports.search_book = function (req, res) {
   console.log(req.params);
-  Book.find({$text: {$search: req.params.key}}, function (err, book) {
-    if (err)
-      res.send(err);
+  Book.find({ $text: { $search: req.params.key } }, function (err, book) {
+    const message = {
+      code: 402,
+      message: "There is no user on database!!",
+    };
+    if (err) res.send(err, message);
     res.json(book);
   }).limit(20);
 };
@@ -67,9 +65,8 @@ exports.search_book = function (req, res) {
 //Find an author by name
 exports.find_book_author = function (req, res) {
   console.log(req.params);
-  Book.find({"authors.0.aName": req.params.author }, function (err, book) {
-    if (err)
-      res.send(err);
+  Book.find({ "authors.0.aName": req.params.author }, function (err, book) {
+    if (err) res.send(err);
     res.json(book);
   }).limit(20);
 };
@@ -77,9 +74,8 @@ exports.find_book_author = function (req, res) {
 //Working
 exports.find_book_publishdate = function (req, res) {
   console.log(req.params);
-  Book.find({"publishDate": req.params.publishDate }, function (err, book) {
-    if (err)
-      res.send(err);
+  Book.find({ publishDate: req.params.publishDate }, function (err, book) {
+    if (err) res.send(err);
     res.json(book);
   });
 };
@@ -89,10 +85,7 @@ exports.find_book_publishdate = function (req, res) {
 // {"genres.2.gId":"g189"}, {"genres.2.gId":"g113"}
 exports.update_books = function (req, res) {
   console.log(req.params);
-  Book.updateMany({  }, {  }, function(
-    err,
-    result
-  ) {
+  Book.updateMany({}, {}, function (err, result) {
     if (err) {
       res.send(err);
     } else {
@@ -103,39 +96,47 @@ exports.update_books = function (req, res) {
 
 //Working
 exports.update_a_book = function (req, res) {
-  Book.findOneAndUpdate({
-    id: req.params.bookId
-  }, req.body, {
-    new: true
-  }, function (err, book) {
-    if (err)
-      res.send(err);
-    res.json(book);
-  });
+  Book.findOneAndUpdate(
+    {
+      id: req.params.bookId,
+    },
+    req.body,
+    {
+      new: true,
+    },
+    function (err, book) {
+      if (err) res.send(err);
+      res.json(book);
+    }
+  );
 };
 
 //Working
 exports.delete_a_book = function (req, res) {
-  Book.findOneAndRemove({
-    id: req.params.bookId
-  }, function (err, book) {
-    if (err)
-      res.send(err);
-    res.json({
-      message: 'Book successfully deleted'
-    });
-  });
+  Book.findOneAndRemove(
+    {
+      id: req.params.bookId,
+    },
+    function (err, book) {
+      if (err) res.send(err);
+      res.json({
+        message: "Book successfully deleted",
+      });
+    }
+  );
 };
 
 //TODO A service for counts all the books
 exports.books_count = function (req, res) {
-  Book.find({
-    id: req.params.bookId
-  }, function (err, book) {
-    if (err)
-      res.send(err);
-    res.json({
-      message: 'Books'
-    });
-  });
+  Book.find(
+    {
+      id: req.params.bookId,
+    },
+    function (err, book) {
+      if (err) res.send(err);
+      res.json({
+        message: "Books",
+      });
+    }
+  );
 };

@@ -140,3 +140,5 @@ exports.books_count = function (req, res) {
     }
   );
 };
+
+//exports = Book;

@@ -1,0 +1,46 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Tod API",
+      "description": "Tod Node.js Application API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3003",
+    "basePath": "/api/v1",
+    "tags": [
+      {
+        "name": "Users",
+        "description": "API for users in the system"
+      },
+      {
+        "name": "Books",
+        "description": "API for books in the system"
+      },
+      {
+        "name": "Authors",
+        "description": "API for authors in the system"
+      },
+      {
+        "name": "Genres",
+        "description": "API for genres in the system"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+
+    },
+    "definitions": {
+    }
+  }

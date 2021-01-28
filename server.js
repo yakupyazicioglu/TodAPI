@@ -2,16 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const config = require('./api/config/config.js');
 const mongoose = require("mongoose")
-const Book = require("./api/models/book");
-const Author = require("./api/models/author");
-const Genre = require("./api/models/genre");
-const User = require("./api/models/user");
 const bodyParser = require('body-parser');
-const AdminBro = require('admin-bro')
-const AdminBroExpressjs = require('admin-bro-expressjs')
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 var routes = require("./api/routes/apiRoutes.js");
-
-AdminBro.registerAdapter(require('admin-bro-mongoose'))
 
 const app = express();
 
@@ -28,17 +22,14 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 app.use(cors());
 
-const adminBro = new AdminBro({
-    resources: [Book,Author,Genre,User],
-    rootPath: '/collections',
-  });
-
-// Build and use a router which will handle all AdminBro routes
-const router = AdminBroExpressjs.buildRouter(adminBro)
-app.use(adminBro.options.rootPath, router)
+//app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+//app.use('/api/v1', routes);
 
 //ROUTES TO USE
 routes(app);
+
+//router.use('/api-docs', swaggerUi.serve);
+//router.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 app.listen(config.port, () => {
     console.log(`Server listening at ${config.port}`)

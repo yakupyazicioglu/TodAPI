@@ -1,4 +1,6 @@
 'use strict';
+//var router = require("express").Router();
+
 module.exports = function (app) {
     var bookList = require('../controllers/bookController');
     var authorList = require('../controllers/authorController');

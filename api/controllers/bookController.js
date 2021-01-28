@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var Book = mongoose.model("Book");
+var Book = require("../models/book");
 
 exports.test = function (req, res) {
   res.send("Greetings from the Test controller!");

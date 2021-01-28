@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Genre = mongoose.model('Genre');
+var Genre = require("../models/genre");
 
 //Get all the genres
 exports.list_all_genres = function (req, res) {

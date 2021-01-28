@@ -1,6 +1,6 @@
 require("dotenv").config();
 var mongoose = require("mongoose");
-var User = mongoose.model("User");
+var User = require("../models/user");
 var bcrypt = require("bcrypt");
 const utils = require("../utils/verifyToken");
 
@@ -24,7 +24,6 @@ exports.register = function (req, res) {
 
 //Login user with email and pass
 exports.login = function (req, res, callback) {
-  console.log(req.body);
   User.findOne({ username: req.body.username }).exec(function (err, user) {
     if (err) {
       return callback(err);
@@ -85,6 +84,19 @@ exports.get_user = function (req, res) {
       res.json(user);
     }
   );
+};
+
+//Search a user
+exports.search_user = function (req, res) {
+  console.log(req.params);
+  User.find({ $text: { $search: req.params.key } }, function (err, user) {
+    const message = {
+      code: 402,
+      message: "This user is not on database!!",
+    };
+    if (err) res.send(err, message);
+    res.json(user);
+  }).limit(20);
 };
 
 //TODO: Find a User by Id

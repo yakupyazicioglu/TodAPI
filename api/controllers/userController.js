@@ -1,6 +1,6 @@
 require("dotenv").config();
 var mongoose = require("mongoose");
-var User = mongoose.model("User");
+var User = require("../models/user");
 var bcrypt = require("bcrypt");
 const utils = require("../utils/verifyToken");
 
@@ -18,13 +18,15 @@ exports.register = function (req, res) {
       message: "Can't create user!",
     };
     if (err) res.send(error);
+    const message = {
+      message: "User registered!",
+    };
     res.json(user);
   });
 };
 
 //Login user with email and pass
 exports.login = function (req, res, callback) {
-  console.log(req.body);
   User.findOne({ username: req.body.username }).exec(function (err, user) {
     if (err) {
       return callback(err);
@@ -44,7 +46,10 @@ exports.login = function (req, res, callback) {
         // get basic user details
         const userObj = utils.getCleanUser(user);
         // return the token along with user details
-        return res.send({ user: userObj, token });
+        const message = {
+          message: "User logged in!",
+        };
+        return res.send({ user: userObj, token, message });
       } else {
         const error = {
           //user: {},
@@ -70,11 +75,11 @@ exports.list_all_users = function (req, res) {
   });
 };
 
-//Get logged in user
+//Get user with id
 exports.get_user = function (req, res) {
   User.findOne(
     {
-      id: req.params.uId,
+      id: req.params.id,
     },
     function (err, user) {
       const message = {
@@ -87,42 +92,11 @@ exports.get_user = function (req, res) {
   );
 };
 
-//TODO: Find a User by Id
-exports.find_a_user = function (req, res) {
-  console.log(req.params);
-  User.findOne(
-    {
-      id: req.params.uId,
-    },
-    function (err, user) {
-      const message = {
-        code: 405,
-        message: "This user is not on database!!",
-      };
-      if (err) res.send(message);
-      res.json(user);
-    }
-  );
-};
-
-//TODO: Search a User
-exports.search_user = function (req, res) {
-  console.log(req.params);
-  User.find({ $text: { $search: req.params.key } }, function (err, user) {
-    const message = {
-      code: 402,
-      message: "Sorry!! We could not find this user!!",
-    };
-    if (err) res.send(err, message);
-    res.json(user);
-  });
-};
-
 //TODO:  Working
 exports.update_user = function (req, res) {
   User.findOneAndUpdate(
     {
-      id: req.params.uId,
+      id: req.params.id,
     },
     req.body,
     {
@@ -130,7 +104,9 @@ exports.update_user = function (req, res) {
     },
     function (err, user) {
       if (err) res.send(err);
-      res.json(user);
+      res.json({
+        message: "User successfully updated",
+      });
     }
   );
 };
@@ -139,7 +115,7 @@ exports.update_user = function (req, res) {
 exports.delete_user = function (req, res) {
   User.findOneAndRemove(
     {
-      id: req.params.uId,
+      id: req.params.id,
     },
     function (err, user) {
       if (err) res.send(err);
@@ -148,4 +124,17 @@ exports.delete_user = function (req, res) {
       });
     }
   );
+};
+
+//FIXME: Search a user
+exports.search_user = function (req, res) {
+  console.log(req.params);
+  User.find({ $text: { $search: req.params.key } }, function (err, user) {
+    const message = {
+      code: 402,
+      message: "This user is not on database!!",
+    };
+    if (err) res.send(err, message);
+    res.json(user);
+  }).limit(20);
 };

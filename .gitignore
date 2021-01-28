@@ -1,4 +1,5 @@
 node_modules
+.history
 package-lock.json
 .adminbro/.entry.js
-node_modules/ini/ini.js
+.DS_Store

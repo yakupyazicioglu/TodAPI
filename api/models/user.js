@@ -1,6 +1,5 @@
 var mongoose = require("mongoose");
 var bcrypt = require("bcrypt");
-
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
@@ -53,6 +52,8 @@ UserSchema.pre("save", function (next) {
     next();
   });
 });
+
+UserSchema.index({ username: "text" });
 
 //Export model
 module.exports = mongoose.model('User', UserSchema);

@@ -1,0 +1,770 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Tod API",
+    "description": "Tod Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3003",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "Users",
+      "description": "API for users in the system"
+    },
+    {
+      "name": "Books",
+      "description": "API for books in the system"
+    },
+    {
+      "name": "Authors",
+      "description": "API for authors in the system"
+    },
+    {
+      "name": "Genres",
+      "description": "API for genres in the system"
+    },
+    {
+      "name": "Search",
+      "description": "API for search in the system"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "api/": {
+      "get": {
+        "tags": [
+          "Default"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/users/{userId}": {
+      "parameters": [
+        {
+          "name": "userId",
+          "in": "path",
+          "required": true,
+          "description": "ID of user that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get user with given ID",
+        "responses": {
+          "200": {
+            "description": "User is found",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete user with given ID",
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "User is deleted",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update user with give ID",
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User is updated",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/users/login": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/users/register": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/books/p/{paginate}": {
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/books/{bookId}": {
+      "parameters": [
+        {
+          "name": "bookId",
+          "in": "path",
+          "required": true,
+          "description": "ID of book that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Get book with given ID",
+        "responses": {
+          "200": {
+            "description": "Book is found",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete book with given ID",
+        "tags": [
+          "Books"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book is deleted",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update book with give ID",
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "book",
+            "in": "body",
+            "description": "User with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User is updated",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          }
+        }
+      }
+    },
+    "api/books/isbn/{isbn}": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/authors": {
+      "get": {
+        "tags": [
+          "Authors"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/authors/{authorId}": {
+      "parameters": [
+        {
+          "name": "authorId",
+          "in": "path",
+          "required": true,
+          "description": "ID of author that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Authors"
+        ],
+        "summary": "Get author with given ID",
+        "responses": {
+          "200": {
+            "description": "Author is found",
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete author with given ID",
+        "tags": [
+          "Authors"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book is deleted",
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update author with give ID",
+        "tags": [
+          "Authors"
+        ],
+        "parameters": [
+          {
+            "name": "author",
+            "in": "body",
+            "description": "Author with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Author is updated",
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
+          }
+        }
+      }
+    },
+    "api/genres": {
+      "post": {
+        "tags": [
+          "Genres"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/genres/{genreId}": {
+      "parameters": [
+        {
+          "name": "genreId",
+          "in": "path",
+          "required": true,
+          "description": "ID of genre that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Genres"
+        ],
+        "summary": "Get genre with given ID",
+        "responses": {
+          "200": {
+            "description": "Genre is found",
+            "schema": {
+              "$ref": "#/definitions/Genre"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete genre with given ID",
+        "tags": [
+          "Genres"
+        ],
+        "responses": {
+          "200": {
+            "description": "Genre is deleted",
+            "schema": {
+              "$ref": "#/definitions/Genre"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update genre with give ID",
+        "tags": [
+          "Genres"
+        ],
+        "parameters": [
+          {
+            "name": "genre",
+            "in": "body",
+            "description": "Genre with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/Genre"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Genre is updated",
+            "schema": {
+              "$ref": "#/definitions/Genre"
+            }
+          }
+        }
+      }
+    },
+    "api/genre/search/{key}": {
+      "get": {
+        "tags": [
+          "Search"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/books/search/{key}": {
+      "get": {
+        "tags": [
+          "Search"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/author/search/{key}": {
+      "get": {
+        "tags": [
+          "Search"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "api/user/search/{key}": {
+      "get": {
+        "tags": [
+          "Search"
+        ],
+        "description": "Get all users in database",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "required": [
+        "_id",
+        "username",
+        "email",
+        "password"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "username": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "Book": {
+      "required": [
+        "_id",
+        "bId",
+        "title",
+        "cover",
+        "authors",
+        "isbn"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "bId": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "title": {
+          "type": "string"
+        },
+        "cover": {
+          "type": "string"
+        },
+        "authors": {
+          "type": "Array"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "publishDate": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "isbn": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "genres": {
+          "type": "Array"
+        }
+      }
+    },
+    "Author": {
+      "required": [
+        "_id",
+        "aId",
+        "aName"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "aId": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "aName": {
+          "type": "string"
+        },
+        "cover": {
+          "type": "string"
+        },
+        "summaru": {
+          "type": "string"
+        }
+      }
+    },
+    "Genre": {
+      "required": [
+        "_id",
+        "gId",
+        "gName",
+        "gValue"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "gId": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "gName": {
+          "type": "string"
+        },
+        "gValue": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

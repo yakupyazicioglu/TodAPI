@@ -7,10 +7,8 @@ router.route("/").get(authorList.list_all_authors);
 
 router
   .route("/:aId")
-  .get(authorList.find_an_author)
-  .put(authorList.update_an_author)
-  .delete(authorList.delete_an_author);
+  .get(authorList.get_author)
 
-router.route("/search/author/:key").get(authorList.search_author);
+router.route("/search/:key").get(authorList.search_author);
 
 module.exports = router;

@@ -15,6 +15,6 @@ router.route("/login").post(userList.login);
 
 router.route("/register").post(userList.register);
 
-router.route("/search/user/:key").get(userList.search_user);
+router.route("/search/:key").get(userList.search_user);
 
 module.exports = router;

@@ -18,6 +18,9 @@ exports.register = function (req, res) {
       message: "Can't create user!",
     };
     if (err) res.send(error);
+    const message = {
+      message: "User registered!",
+    };
     res.json(user);
   });
 };
@@ -43,7 +46,10 @@ exports.login = function (req, res, callback) {
         // get basic user details
         const userObj = utils.getCleanUser(user);
         // return the token along with user details
-        return res.send({ user: userObj, token });
+        const message = {
+          message: "User logged in!",
+        };
+        return res.send({ user: userObj, token, message });
       } else {
         const error = {
           //user: {},
@@ -69,11 +75,11 @@ exports.list_all_users = function (req, res) {
   });
 };
 
-//Get logged in user
+//Get user with id
 exports.get_user = function (req, res) {
   User.findOne(
     {
-      id: req.params.uId,
+      id: req.params.id,
     },
     function (err, user) {
       const message = {
@@ -86,7 +92,41 @@ exports.get_user = function (req, res) {
   );
 };
 
-//Search a user
+//TODO:  Working
+exports.update_user = function (req, res) {
+  User.findOneAndUpdate(
+    {
+      id: req.params.id,
+    },
+    req.body,
+    {
+      new: true,
+    },
+    function (err, user) {
+      if (err) res.send(err);
+      res.json({
+        message: "User successfully updated",
+      });
+    }
+  );
+};
+
+//Working
+exports.delete_user = function (req, res) {
+  User.findOneAndRemove(
+    {
+      id: req.params.id,
+    },
+    function (err, user) {
+      if (err) res.send(err);
+      res.json({
+        message: "User successfully deleted",
+      });
+    }
+  );
+};
+
+//FIXME: Search a user
 exports.search_user = function (req, res) {
   console.log(req.params);
   User.find({ $text: { $search: req.params.key } }, function (err, user) {
@@ -97,67 +137,4 @@ exports.search_user = function (req, res) {
     if (err) res.send(err, message);
     res.json(user);
   }).limit(20);
-};
-
-//TODO: Find a User by Id
-exports.find_a_user = function (req, res) {
-  console.log(req.params);
-  User.findOne(
-    {
-      id: req.params.uId,
-    },
-    function (err, user) {
-      const message = {
-        code: 405,
-        message: "This user is not on database!!",
-      };
-      if (err) res.send(message);
-      res.json(user);
-    }
-  );
-};
-
-//TODO: Search a User
-exports.search_user = function (req, res) {
-  console.log(req.params);
-  User.find({ $text: { $search: req.params.key } }, function (err, user) {
-    const message = {
-      code: 402,
-      message: "Sorry!! We could not find this user!!",
-    };
-    if (err) res.send(err, message);
-    res.json(user);
-  });
-};
-
-//TODO:  Working
-exports.update_user = function (req, res) {
-  User.findOneAndUpdate(
-    {
-      id: req.params.uId,
-    },
-    req.body,
-    {
-      new: true,
-    },
-    function (err, user) {
-      if (err) res.send(err);
-      res.json(user);
-    }
-  );
-};
-
-//Working
-exports.delete_user = function (req, res) {
-  User.findOneAndRemove(
-    {
-      id: req.params.uId,
-    },
-    function (err, user) {
-      if (err) res.send(err);
-      res.json({
-        message: "User successfully deleted",
-      });
-    }
-  );
 };

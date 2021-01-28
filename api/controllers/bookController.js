@@ -1,10 +1,6 @@
 var mongoose = require("mongoose");
 var Book = require("../models/book");
 
-exports.test = function (req, res) {
-  res.send("Greetings from the Test controller!");
-};
-
 //Get all the books
 exports.list_all_books = function (req, res) {
   Book.paginate({}, { page: req.params.page, limit: 20 }, function (err, book) {
@@ -13,17 +9,8 @@ exports.list_all_books = function (req, res) {
   });
 };
 
-//Useles for now
-exports.create_a_book = function (req, res) {
-  var new_book = new Book(req.body);
-  new_book.save(function (err, book) {
-    if (err) res.send(err);
-    res.json(book);
-  });
-};
-
 //Find a book by Id
-exports.find_a_book = function (req, res) {
+exports.get_book = function (req, res) {
   console.log(req.params);
   Book.findOne({ bId: req.params.bookId }, function (err, book) {
     if (err) res.send(err);
@@ -32,7 +19,7 @@ exports.find_a_book = function (req, res) {
 };
 
 //Find a book by isbn
-exports.find_book_isbn = function (req, res) {
+exports.book_isbn = function (req, res) {
   console.log(req.params);
   Book.findOne({ isbn: req.params.isbn }, function (err, book) {
     if (err) res.send(err);
@@ -40,44 +27,16 @@ exports.find_book_isbn = function (req, res) {
   });
 };
 
-//Find a book by title
-exports.find_book_title = function (req, res) {
-  console.log(req.params);
-  Book.find({ title: req.params.title }, function (err, book) {
-    if (err) res.send(err);
-    res.json(book);
-  }).limit(20);
-};
-
 //Search a book
 exports.search_book = function (req, res) {
-  console.log(req.params);
   Book.find({ $text: { $search: req.params.key } }, function (err, book) {
     const message = {
       code: 402,
-      message: "There is no user on database!!",
+      message: "Can't find the book, Sorry!!",
     };
     if (err) res.send(err, message);
     res.json(book);
   }).limit(20);
-};
-
-//Find an author by name
-exports.find_book_author = function (req, res) {
-  console.log(req.params);
-  Book.find({ "authors.0.aName": req.params.author }, function (err, book) {
-    if (err) res.send(err);
-    res.json(book);
-  }).limit(20);
-};
-
-//Working
-exports.find_book_publishdate = function (req, res) {
-  console.log(req.params);
-  Book.find({ publishDate: req.params.publishDate }, function (err, book) {
-    if (err) res.send(err);
-    res.json(book);
-  });
 };
 
 //Update book fields with the given info
@@ -93,52 +52,3 @@ exports.update_books = function (req, res) {
     }
   });
 };
-
-//Working
-exports.update_a_book = function (req, res) {
-  Book.findOneAndUpdate(
-    {
-      id: req.params.bookId,
-    },
-    req.body,
-    {
-      new: true,
-    },
-    function (err, book) {
-      if (err) res.send(err);
-      res.json(book);
-    }
-  );
-};
-
-//Working
-exports.delete_a_book = function (req, res) {
-  Book.findOneAndRemove(
-    {
-      id: req.params.bookId,
-    },
-    function (err, book) {
-      if (err) res.send(err);
-      res.json({
-        message: "Book successfully deleted",
-      });
-    }
-  );
-};
-
-//TODO A service for counts all the books
-exports.books_count = function (req, res) {
-  Book.find(
-    {
-      id: req.params.bookId,
-    },
-    function (err, book) {
-      if (err) res.send(err);
-      res.json({
-        message: "Books",
-      });
-    }
-  );
-};
-
-//exports = Book;

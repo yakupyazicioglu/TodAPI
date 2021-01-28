@@ -222,7 +222,7 @@
         }
       }
     },
-    "api/books/{paginate}": {
+    "api/books/p/{paginate}": {
       "post": {
         "tags": [
           "Books"
@@ -527,7 +527,7 @@
         }
       }
     },
-    "api/search/genre/{key}": {
+    "api/genre/search/{key}": {
       "get": {
         "tags": [
           "Search"
@@ -556,7 +556,7 @@
         }
       }
     },
-    "api/search/book/{key}": {
+    "api/books/search/{key}": {
       "get": {
         "tags": [
           "Search"
@@ -585,7 +585,7 @@
         }
       }
     },
-    "api/search/author/{key}": {
+    "api/author/search/{key}": {
       "get": {
         "tags": [
           "Search"
@@ -614,7 +614,7 @@
         }
       }
     },
-    "api/search/user/{key}": {
+    "api/user/search/{key}": {
       "get": {
         "tags": [
           "Search"
